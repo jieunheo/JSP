@@ -18,5 +18,5 @@ JSP 기초
   index.jsp - form 사용  
   data.jsp - form에서 넘어온 값 받음  
   
-## jsp05  
+## jsp06  
   index.jsp - 나에게 값을 주는 형식 사용  
