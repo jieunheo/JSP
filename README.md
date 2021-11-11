@@ -20,3 +20,6 @@ JSP 기초
   
 ## jsp06  
   index.jsp - 나에게 값을 주는 형식 사용  
+  
+## myjsp  
+  index.jsp - 나에게 값을 주는 형식 응용  
