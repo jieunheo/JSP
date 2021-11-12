@@ -10,16 +10,26 @@
 				height: 600px;
 			}
 			
+			table tr td {
+				padding: 10px;
+			}
+			
 			table tr:first-child {
-				height: 60px;
+				height: 80px;
+				background-color: #eee;
 			}
 			
 			table tr:nth-child(2) {
 				vertical-align: top;
 			}
 			
+			table tr:nth-child(2) td:first-child {
+				background-color: #fdfdfd;
+			}
+			
 			table tr:last-child {
 				height: 60px;
+				background-color: #eee;
 			}
 		</style>
 	</head>
