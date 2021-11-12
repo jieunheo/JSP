@@ -38,5 +38,16 @@ JSP 기초
   menu02.jsp - include menu02 화면  
   menu03.jsp - include menu03 화면  
   
+## jsp10  
+  index.jsp - include 메인 화면  
+  header.jsp - include 상단 화면  
+  footer.jsp - include 하단 화면  
+  write.jsp - include write 화면  
+  writeok.jsp - include write 화면  
+  view.jsp - include view 화면  
+  delete.jsp - include delete 화면  
+  modity.jsp - include modity 화면  
+  modityok.jsp - include modityok 화면  
+  
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
