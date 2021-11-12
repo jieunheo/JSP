@@ -21,5 +21,13 @@ JSP 기초
 ## jsp06  
   index.jsp - 나에게 값을 주는 형식 사용  
   
+## jsp07  
+  index.jsp - Person 클래스 값 받아오기  
+  ezen/Person.java - Person 클래스  
+  
+## jsp08  
+  index.jsp - include 사용  
+  sub.jsp - include 받는 파일  
+  
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
