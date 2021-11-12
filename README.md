@@ -52,5 +52,9 @@ JSP 기초
 ## jsp11  
   index.jsp - request 예제  
   
+## jsp12  
+  index.jsp - 계산기 예제  
+  data.jsp - 계산 예제  
+  
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
