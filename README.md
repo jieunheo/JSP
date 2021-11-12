@@ -46,8 +46,8 @@ JSP 기초
   writeok.jsp - include write 화면  
   view.jsp - include view 화면  
   delete.jsp - include delete 화면  
-  modity.jsp - include modity 화면  
-  modityok.jsp - include modityok 화면  
+  modify.jsp - include modify 화면  
+  modifyok.jsp - include modifyok 화면  
   
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
