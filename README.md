@@ -49,5 +49,8 @@ JSP 기초
   modify.jsp - include modify 화면  
   modifyok.jsp - include modifyok 화면  
   
+## jsp11  
+  index.jsp - request 예제  
+  
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
