@@ -56,5 +56,9 @@ JSP 기초
   index.jsp - 계산기 예제  
   data.jsp - 계산 예제  
   
+## jsp13  
+  cal.jsp - 계산기 예제  
+  cal2.jsp - 계산기 예제 jsp 보완  
+  
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
