@@ -34,6 +34,10 @@
 		<meta charset="UTF-8">
 		<title>예제 연습</title>
 		<style>
+			body {
+				text-align: center;
+			}
+			
 			input:focus, select:focus {
 				background-color: #eee;
 			}
@@ -49,6 +53,7 @@
 		</style>
 	</head>
 	<body>
+		<h2>계산기</h2>
 		<form name="a" method="get" action="cal2.jsp">
 			<input type="text" size="5" name="x" value="<%= x %>" required>
 			<select name="op">
