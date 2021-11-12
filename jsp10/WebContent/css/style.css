@@ -1,0 +1,186 @@
+@charset "UTF-8";
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+      
+input[type=submit],
+input[type=button] {
+  outline: 0;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 12px;
+}
+
+.wrap {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid #3C5A91;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.btn:hover {
+  background-color: #3C5A91;
+  color: #fff;
+}
+
+.btnWrap {
+  text-align: center;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* index */
+
+header {
+  text-align: center;
+}
+
+.maintop {
+  margin-bottom: 10px;
+}
+
+.search {
+  float: left;
+}
+
+.bookwrite {
+  float: right;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #3C5A91;
+  font-weight: bold;
+  color: #fff;
+}
+
+th, td {
+  padding: 6px;
+}
+
+tbody td:first-child,
+tbody td:nth-child(3) {
+  text-align: center;
+}
+
+tbody td:first-child,
+tbody td:nth-child(3),
+tbody td:nth-child(4) {
+  width: 80px;
+}
+
+tbody td:last-child {
+  text-align: right;
+  padding-right: 10px;
+}
+
+tbody tr:hover {
+  background-color: #ededed;
+}
+
+tbody tr:hover a {
+  color: #1E3269;
+}
+
+.list {
+  text-align: center;
+}
+
+.list li {
+  display: inline-block;
+}
+
+.list a {
+  display: block;
+  padding: 5px;
+  color: #555;
+}
+
+.list a:hover {
+  color:  #5A78AF;
+}
+
+.list .now {
+  font-weight: bold;
+  color:  #5A78AF;
+}
+
+/* write, view */
+.viewform {
+  position: relative;
+}
+
+.writeform, .viewform {
+  background-color: #fdfdfd;
+  padding: 20px;
+}
+
+.writeform span, .viewform span {
+  display: inline-block;
+  width: 100px;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+.writeform textarea {
+  width: 500px;
+  height: 200px;
+}
+
+.writeform input[type=text]:focus,
+.writeform textarea:focus {
+  background-color: #eee;
+}
+
+.viewform .textarea {
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 200px;
+}
+
+.bookimg {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 180px;
+  height: 235px;
+  border: 1px solid #eee;
+  background-image: url("https://t1.daumcdn.net/cfile/tistory/992669355B9FC90042");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* --ok */
+.ok {
+  width: 500px;
+  margin: 50px auto 0;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.msg {
+  margin-bottom: 30px;
+}
