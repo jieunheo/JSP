@@ -60,5 +60,9 @@ JSP 기초
   cal.jsp - 계산기 예제  
   cal2.jsp - 계산기 예제 jsp 보완  
   
+## jsp14  
+  index.jsp - 쿠키 예제  
+  view.jsp - 쿠키 받는 곳  
+  
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
