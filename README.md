@@ -68,5 +68,11 @@ JSP 기초
   index.jsp - 세션 예제  
   view.jsp - 세션 받는 곳  
   
+## jsp15  
+  index.jsp - 로그인 예제  
+  login.jsp - 로그인  
+  loginok.jsp - 로그인 확인  
+  logout.jsp - 로그아웃  
+  
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
