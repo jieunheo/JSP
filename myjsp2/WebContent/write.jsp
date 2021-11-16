@@ -13,7 +13,7 @@ String today = now.getToday();
 		<h3>글쓰기</h3>
 		<form name="write" method="post" action="writeok.jsp">
 			<p><span>제목(*)</span> <input type="text" name="title" required></p>
-			<p><span>작성일</span> <%= today %></p>
+			<p><span>작성일</span> <input type="text" name="date" value="<%= today %>" readonly></p>
 			<p><span>작성자</span> <%= login.getUserName() %></p>
 			<p><span>내용</span>
 				<textarea name="contents"></textarea>

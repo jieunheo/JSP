@@ -190,13 +190,13 @@ a.now {
 	width: 100px;
 }
 
-/* loginok/logout/signup/info/reinfo */
-.loginok, .logout, .signup, .info, .reinfo {
+/* loginok/logout/signup/info/reinfo/writeok */
+.loginok, .logout, .signup, .info, .reinfo, .writeok {
 	text-align: center;
 }
 
 /* signup/info */
-.signup, .info, .write, .reinfo {
+.signup, .info, .reinfo, .writeok {
 	width: 600px;
 	margin: 0 auto;
 }
@@ -230,10 +230,20 @@ a.now {
 }
 
 /* write */
+.write {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.write h3 {
+	text-align: center;
+}
+
 .write span {
 	display: inline-block;
 	text-align: left;
 	width: 70px;
+	vertical-align: top;
 }
 
 .write textarea {
