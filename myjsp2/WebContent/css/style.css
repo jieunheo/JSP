@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+body, h1, h2, h3, h4, h5, h6, a, ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h3 {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.clearfix {
+	content: '';
+	display: block;
+	clear: both;
+} 
+
+.btn {
+	padding: 5px 10px;
+	border: 1px solid #46649B;
+	border-radius: 10px;
+	background-color: #fff;
+	color: #46649B;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.btn:hover {
+	background-color: #46649B;
+	color: #fff;
+}
+
+input:focus {
+	background: #eee;
+}
+
+/* header */
+header {
+	height: 80px;
+	line-height: 70px;
+	
+	padding: 0 20px;
+}
+
+
+h1 {
+	color: #46649B;
+	display: inline-block;
+}
+
+.nav {
+	display: inline-block;
+	float: right;
+}
+
+.nav ul {
+	list-style: none;
+}
+
+.nav li {
+	display: inline-block;
+}
+
+.nav li a {
+	display: inline-block;
+	padding: 5px 10px;
+	font-weight: bold;
+}
+
+.nav li a:hover {
+	color: #46649B;
+}
+
+/* main */
+.main h2 {
+	text-align: center;
+	margin: 5px 0 20px;
+}
+
+.contents {
+	text-align: center;
+}
+
+.content {
+	display: inline-block;
+	
+	box-sizing: border-box;
+	margin: 10px 5px;
+	padding: 20px 0;
+	width: 300px;
+	height: 130px;
+	border-radius: 30px;
+	
+	background: #d0d9ea;
+	color: #283a5b;
+}
+
+.content h4 {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+.content:hover {
+	background: #46649B;
+	color: #fff;
+}
+
+/* cal */
+.cal {
+	box-sizing: border-box;
+	padding: 20px;
+	text-align: center;
+}
+
+/* notice */
+.notice {
+	margin: 0 auto;
+	text-align: center;
+	width: 600px;
+}
+
+.notice .btn {
+	float: right;
+}
+
+table {
+	width: 100%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border-bottom: 1px solid #d0d9ea;
+}
+
+table th:first-child {
+	width: 60px;
+}
+
+table th:nth-child(3),
+table th:nth-child(4) {
+	width: 70px;
+}
+
+table thead {
+	background-color: #d0d9ea;
+}
+
+table th, table td {
+	padding: 5px;
+}
+
+table td:nth-child(2) {
+	text-align: left;
+}
+
+table tbody tr:hover {
+	background: #eee;
+}
+
+.paging {
+	padding: 5px;
+}
+
+.paging li,
+.paging a {
+	display: inline-block;
+}
+
+a.now {
+	color: #283a5b;
+	text-decoration: underline;
+}
+
+.paging a:hover {
+	color: #283a5b;
+}
+
+/* login */
+.login {
+	text-align: center;
+}
+
+.login span {
+	display: inline-block;
+	width: 100px;
+}
+
+/* loginok/logout/signup/info/reinfo */
+.loginok, .logout, .signup, .info, .reinfo {
+	text-align: center;
+}
+
+/* signup/info */
+.signup, .info, .write, .reinfo {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.signup span, .reinfo span {
+	display: inline-block;
+	text-align: left;
+	width: 130px;
+}
+
+.signup input[type=text],
+.signup input[type=password],
+.reinfo input[type=text],
+.reinfo input[type=password] {
+	width: 140px;
+}
+
+.info {
+	width: 300px;
+}
+
+.info p {
+	width: 100%;
+	text-align: left;
+}
+
+.info span {
+	display: inline-block;
+	text-align: left;
+	width: 80px;
+}
+
+/* write */
+.write span {
+	display: inline-block;
+	text-align: left;
+	width: 70px;
+}
+
+.write textarea {
+	width: 400px;
+	height: 200px;
+}

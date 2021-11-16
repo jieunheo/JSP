@@ -82,3 +82,6 @@ JSP 기초
   
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
+  
+## myjsp2  
+  index.jsp - 배운 내용 엮기  
