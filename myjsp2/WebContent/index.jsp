@@ -6,11 +6,11 @@
 <div class="main">
 	<h2>나의 JSP 연습</h2>
 	<div class="contents">
-		<a href="cal.jsp" class="content">
+		<a href="cal.jsp" class="cont">
 			<h4>계산기로 가기</h4>
 			<p>jsp로 구현한 간단한 계산기</p>
 		</a>
-		<a href="notice.jsp"class="content">
+		<a href="notice.jsp"class="cont">
 			<h4>공지사항</h4>
 			<p>jsp로 구현한 공지사항 게시판</p>
 		</a>
