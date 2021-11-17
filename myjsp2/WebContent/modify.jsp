@@ -7,7 +7,7 @@
 <div class="main">
 	<div class="modify">
 		<h3>글쓰기</h3>
-		<form name="modify" method="post" action="modifyok.jsp">
+		<form name="modify" method="post" action="view.jsp">
 			<p><span>제목(*)</span> <input type="text" name="title" value="공지사항입니다." required></p>
 			<p><span>작성일</span> <input type="text" name="date" value="2021.11.16" readonly></p>
 			<p><span>작성자</span> 홍선생</p>
