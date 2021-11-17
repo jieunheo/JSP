@@ -10,6 +10,17 @@ String today = now.getToday();
 
 <div class="main">
 	<div class="write">
+	<%
+	if (login==null)
+	{
+		%>
+		<h3>글쓰기 오류</h3>
+		<p>잘목된 접근입니다.</p>
+		<a class="btn" href="index.jsp">홈으로</a>
+		<%
+	}	else
+	{
+		%>
 		<h3>글쓰기</h3>
 		<form name="write" method="post" action="writeok.jsp">
 			<p><span>제목(*)</span> <input type="text" name="title" required></p>
@@ -18,9 +29,12 @@ String today = now.getToday();
 			<p><span>내용</span>
 				<textarea name="contents"></textarea>
 			</p>
-			<a class="btn" href="index.jsp">뒤로가기</a>
+			<a class="btn" href="notice.jsp">뒤로가기</a>
 			<input class="btn" type="submit" value="글쓰기">
 		</form>
+		<%
+	}	
+	%>
 	</div>
 </div>
 
