@@ -25,7 +25,8 @@
 			<%
 		}
 		%>
-		<a class="btn" href="write.jsp">다시 쓰기</a>
+		<a class="btn" href="write.jsp">새글쓰기</a>
+		<a class="btn" href="view.jsp">글보기</a>
 		<a class="btn" href="notice.jsp">글목록</a>
 	</div>
 </div>
