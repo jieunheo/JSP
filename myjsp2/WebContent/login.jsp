@@ -13,8 +13,8 @@
 		<form name="login" method="post" action="loginok.jsp">
 			<p><span>아이디</span> <input type="text" name="userid" required></p>
 			<p><span>비밀번호</span> <input type="password" name="userpw" required></p>
-			<input class="btn" type="submit" value="로그인">
 			<a class="btn" href="signup.jsp">회원가입</a>
+			<input class="btn" type="submit" value="로그인">
 		</form>
 	</div>
 </div>
