@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+<%@ page import="ezen.*" %>
 
 <%
 String title = "";
@@ -12,6 +13,7 @@ if (no == null)
 	return;
 }
 
+/*
 //JDBC 드라이버 로드
 Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -41,6 +43,24 @@ if (result.next() == true)
 //닫기(*필수)
 stmt.close(); //닫기
 conn.close(); //db닫기
+*/
+
+MemoDTO dto = new MemoDTO();
+dto.DBOpen();
+
+String sql = "select no,title,note from memo where no=" + no;
+dto.OpenQuery(sql);
+if (dto.GetNext())
+{
+	title = dto.GetValue("title");
+	note = dto.GetValue("note");
+}
+
+dto.CloseQuery();
+dto.DBClose();
+
+
+
 %>
 <!DOCTYPE html>
 <html>
