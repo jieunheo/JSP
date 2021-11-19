@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+div {
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	outline: 0;
+	border: none;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.wrap {
+	width: 500px;
+	margin: 0 auto;
+}
+
+h3 {
+	text-align: center;
+}
+
+span {
+	display: inline-block;
+	width: 50px;
+	font-weight: bold;
+}
+
+.note {
+	background: #fdfdfd;
+	padding: 15px;
+	min-height: 200px;
+	margin-bottom: 20px;
+}
+
+.btn {
+	background: #4477b5;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.btn:hover {
+	background: #95adca;
+}
+
+.write p > input[type=text] {
+	width: 440px;
+}
+
+textarea {
+	width: 100%;
+	min-height: 200px;
+	margin-bottom: 20px;
+}

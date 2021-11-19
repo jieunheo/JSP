@@ -80,6 +80,9 @@ JSP 기초
   loginok.jsp - 로그인 확인2  
   logout.jsp - 로그아웃2  
   
+## jsp18  
+  .jsp - JSP를 이용하여 DB 컨트롤  
+  
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
   
