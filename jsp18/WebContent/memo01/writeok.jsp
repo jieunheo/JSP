@@ -37,7 +37,6 @@ String userpw = "ezen"; //pw
 Connection conn = null;
 conn = DriverManager.getConnection(host, userid, userpw);
 
-//데이터 추가
 Statement stmt = conn.createStatement(); //작업 처리용 클래스 할당
 
 String sql = "";
