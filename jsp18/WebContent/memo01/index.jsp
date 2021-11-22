@@ -9,6 +9,7 @@ if (page_no != null)    //넘어온 페이지 번호
 {
 	cur_page_no = Integer.parseInt(page_no);
 }
+int paging_list = 10;
 
 //JDBC 드라이버 로드
 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -58,22 +59,24 @@ conn = DriverManager.getConnection(host, userid, userpw);
 			int total = result.getInt("count");
 			out.println("전체 갯수: " + total);
 			
-			int start_no = (cur_page_no - 1) * 10; //페이지번호
+			int start_no = (cur_page_no - 1) * paging_list; //시작 페이지번호
 			sql = "";
 			sql += "select no,title ";
 			sql += "from memo ";
 			//sql += "where title like = '%2%' ";
 			sql += "order by no desc ";
-			sql += "limit " + start_no + ", 10;";
-			
+			sql += "limit " + start_no + ", " + paging_list + ";";
 			result = stmt.executeQuery(sql);
+			
+			//게시물 번호
+			int seqno = total - start_no; //전체 게시물 - 시작 페이지 번호
 			while (result.next() == true)
 			{
 				String no = result.getString("no");
 				String title = result.getString("title");
 				%>
 				<tr>
-					<td><%= no %></td>
+					<td><%= seqno-- %></td>
 					<td style="text-align:left">
 						<a href="view.jsp?no=<%= no %>"><%= title %></a>
 					</td>
@@ -84,17 +87,45 @@ conn = DriverManager.getConnection(host, userid, userpw);
 		</table>
 		<table border="1" align="center" style="width:600px">
 			<tr>
-				<td colspan="2" style="text-align:right">
+				<td colspan="2">
 					<%
-					//최대 페이지 갯수
-					int maxpage = total/10;
-					if ((total % 10) != 0) maxpage++;
+					//최대 페이지 갯수 - 전체 게시물 페이지 갯수
+					int maxpage = total/paging_list;
+					if ((total % paging_list) != 0) maxpage++; //10개 미만 게시물이 있으면 1 추가
 					
-					for (int pageno=1; pageno<=maxpage; pageno++)
+					//페이지 나열 번호 나누기
+					int page_cut = 10; //나열될 페이지 번호의 숫자
+					//시작 페이지 블럭 - 최대 페이지를 단위로 끊은 구간의 시작
+					int start_block = ((cur_page_no - 1) / page_cut) * page_cut + 1;
+					//끝 페이지 블럭 - 최대 페이지를 단위로 끊은 구간의 끝
+					int end_block = start_block + page_cut - 1;
+					if( end_block >= maxpage) //전체 페이지보다 넘을 경우
 					{
-						%><a href="index.jsp?page=<%= pageno %>"> <%= pageno %> |</a><%
+						end_block = maxpage;    //끝페이지를 전체 페이지만큼
+					}
+					
+					//이전페이지로
+					if( start_block >= page_cut ) //시작 페이지가 페이지 컷 기준보다 크면
+					{
+						%><a href="index.jsp?page=<%= start_block - 1 %>">이전 페이지</a> |<%
+					}
+					
+					for (int pageno = start_block; pageno <= end_block; pageno++)
+					{
+						%><a href="index.jsp?page=<%= pageno %>" <% if (cur_page_no == pageno) {%>style="color:red;" <%} %>> <%= pageno %> </a>|<%
+					}
+					
+					//다음페이지로
+					if( end_block < maxpage) //끝 페이지가 최대 페이지보다 작으면
+					{
+						%><a href="index.jsp?page=<%= end_block + 1 %>">다음 페이지</a><%
 					}
 					%>
+					<!-- 페이지 검색 -->
+					<form name="look_up_page" method="get" action="index.jsp">
+						<input type="text" name="page" size="3">
+						<input type="submit" value="페이지로 이동">
+					</form>
 					</td>
 				</tr>
 		</table>
