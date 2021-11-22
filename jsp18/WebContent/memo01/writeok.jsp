@@ -69,9 +69,7 @@ sql += "values ('" + title + "','" + note + "');";
 dto.RunSQL(sql);
 
 //마지막 no값 가져오기
-dto.OpenQuery(sql);
 no = dto.GetLastNo();
-dto.CloseQuery();
 
 dto.DBClose();
 */

@@ -24,9 +24,7 @@ sql += "(title,note) ";
 sql += "values ('" + dbms._R(title) + "','" + dbms._R(note) + "');";
 dbms.RunSQL(sql);
 
-dbms.OpenQuery(sql);
 String no = dbms.GetLastNo();
-dbms.CloseQuery();
 
 dbms.DBClose();
 

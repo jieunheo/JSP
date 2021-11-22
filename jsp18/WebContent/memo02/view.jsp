@@ -3,30 +3,32 @@
 <%@ page import="ezen.*" %>
 
 <%
-DBManager dbms = new DBManager();
-dbms.DBOpen();
-
 String title = "";
 String note = "";
 String no = request.getParameter("no");
 if (no == null)
 {
 	out.println("메모 번호가 없습니다.");
-	dbms.DBClose();
 	return;
 }
+
+DBManager dbms = new DBManager();
+dbms.DBOpen();
 
 String sql = "";
 sql += "select no,title,note ";
 sql += "from memo ";
 sql += "where no=" + no;
 dbms.OpenQuery(sql);
+
 if (dbms.GetNext() == true)
 {
 	title = dbms.GetValue("title");
 	note = dbms.GetValue("note").replace("\n", "<br>");
 }
 dbms.CloseQuery();
+
+dbms.DBClose();
 %>
 <!DOCTYPE html>
 <html>
@@ -54,14 +56,11 @@ dbms.CloseQuery();
 				<td colspan="2" style="text-align:center">
 				<a href="index.jsp">목록</a>
 				&nbsp; | &nbsp; 
-				<a href="modify.jsp">수정</a>
+				<a href="modify.jsp?no=<%= no %>">수정</a>
 				&nbsp; | &nbsp;
-				<a href="delete.jsp">삭제</a>				
+				<a href="delete.jsp?no=<%= no %>">삭제</a>				
 				</td>
 			</tr>			
 		</table>
 	</body>
 </html>
-<%
-dbms.DBClose();
-%>

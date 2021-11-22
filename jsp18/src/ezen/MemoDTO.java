@@ -7,10 +7,10 @@ import java.util.ArrayList;
 public class MemoDTO extends DBManager
 {
 	/* '을 ''으로 */
-	private String _R(String value)
-	{
-		return value.replace("'", "''");
-	}
+//	private String _R(String value)
+//	{
+//		return value.replace("'", "''");
+//	}
 	
 	/* insert */
 	public boolean Insert(MemoVO vo)

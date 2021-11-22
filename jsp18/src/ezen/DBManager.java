@@ -173,19 +173,16 @@ public class DBManager
 	public String GetLastNo() {
 		String sql = "select last_insert_id() as no;";
 		String no = null;
-		ResultSet result;
-		try {
-			result = stmt.executeQuery(sql);
-			if (result.next() == true)
-			{
-				no = result.getString("no");
-			}
-			result.close();
-			return no;
-		} catch (SQLException e)
-		{
-			e.printStackTrace();
-			return null;
-		}
+		
+		OpenQuery(sql);
+		if (GetNext() == true) no = GetValue("no");
+		CloseQuery();
+		return no;
+	}
+	
+	/* '을 ''으로 */
+	public String _R(String value)
+	{
+		return value.replace("'", "''");
 	}
 }
