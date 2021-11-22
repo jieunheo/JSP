@@ -21,8 +21,8 @@ dbms.DBOpen();
 
 String sql = "";
 sql += "update memo ";
-sql += "set title = '" + title + "', "; 
-sql += "note = '" + note + "' ";
+sql += "set title = '" + dbms._R(title) + "', "; 
+sql += "note = '" + dbms._R(note) + "' ";
 sql += "where no = " + no + ";";
 dbms.RunSQL(sql);
 
