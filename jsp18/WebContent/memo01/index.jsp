@@ -4,7 +4,7 @@
 
 <%
 String page_no = request.getParameter("page");
-String max_page = request.getParameter("maxpage");
+//String max_page = request.getParameter("maxpage");
 int    cur_page_no = 1; //기본 페이지
 if (page_no != null)    //넘어온 페이지 번호
 {
@@ -132,11 +132,13 @@ conn = DriverManager.getConnection(host, userid, userpw);
 					}
 					%>
 					<!-- 페이지 검색 -->
-					<!-- <form name="look_up_page" method="get" action="index.jsp">
-						<input type="hidden" name="maxpage" value="<%= //maxpage %>">
+					<%--
+					<form name="look_up_page" method="get" action="index.jsp">
+						<input type="hidden" name="maxpage" value="maxpage">
 						<input type="text" name="page" size="3">
 						<input type="submit" value="페이지로 이동">
-					</form> -->
+					</form>
+					 --%>
 					</td>
 				</tr>
 		</table>
