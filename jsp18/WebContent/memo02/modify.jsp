@@ -38,6 +38,7 @@ dbms.DBClose();
 	</head>
 	<body>
 		<form name="write" method="post" action="modifyok.jsp">
+			<input type="hidden" name="no" value="<%= no %>">
 			<table border="1" align="center" style="width:600px">
 				<tr>
 					<td style="width:100px;">제목</td>
