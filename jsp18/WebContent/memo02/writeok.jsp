@@ -19,6 +19,7 @@ DBManager dbms = new DBManager();
 dbms.DBOpen();
 
 String sql = "";
+//title = String.format("%03d 번째 게시글입니다.", i);
 sql += "insert into memo ";
 sql += "(title,note) ";
 sql += "values ('" + dbms._R(title) + "','" + dbms._R(note) + "');";
