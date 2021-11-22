@@ -4,10 +4,20 @@
 
 <%
 String page_no = request.getParameter("page");
+String max_page = request.getParameter("maxpage");
 int    cur_page_no = 1; //기본 페이지
 if (page_no != null)    //넘어온 페이지 번호
 {
 	cur_page_no = Integer.parseInt(page_no);
+}
+
+//초과된 페이지인 경우 마지막 페이지로 이동
+if (max_page != null)
+{
+	if (cur_page_no > Integer.parseInt(max_page)) {
+		//out.println(page_no + "페이지는 없는 페이지 입니다.");
+		response.sendRedirect("index.jsp?page=" + max_page);
+	}
 }
 int paging_list = 10;
 
@@ -123,6 +133,7 @@ conn = DriverManager.getConnection(host, userid, userpw);
 					%>
 					<!-- 페이지 검색 -->
 					<form name="look_up_page" method="get" action="index.jsp">
+						<input type="hidden" name="maxpage" value="<%= maxpage %>">
 						<input type="text" name="page" size="3">
 						<input type="submit" value="페이지로 이동">
 					</form>
