@@ -51,7 +51,7 @@ dbms.DBClose();
 					<td colspan="2" style="text-align:center">
 					<input type="submit" value="저장하기">
 					&nbsp; | &nbsp; 
-					<a href="view.jsp">취소</a>		
+					<a href="view.jsp?no=<%= no %>">취소</a>		
 					</td>
 				</tr>			
 			</table>
