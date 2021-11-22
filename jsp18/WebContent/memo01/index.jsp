@@ -117,7 +117,7 @@ conn = DriverManager.getConnection(host, userid, userpw);
 					//이전페이지로
 					if( start_block >= page_cut ) //시작 페이지가 페이지 컷 기준보다 크면
 					{
-						%><a href="index.jsp?page=<%= start_block - 1 %>">이전 페이지</a> |<%
+						%><a href="index.jsp?page=<%= start_block - 1 %>">◀</a> |<%
 					}
 					
 					for (int pageno = start_block; pageno <= end_block; pageno++)
@@ -128,7 +128,7 @@ conn = DriverManager.getConnection(host, userid, userpw);
 					//다음페이지로
 					if( end_block < maxpage) //끝 페이지가 최대 페이지보다 작으면
 					{
-						%><a href="index.jsp?page=<%= end_block + 1 %>">다음 페이지</a><%
+						%><a href="index.jsp?page=<%= end_block + 1 %>">▶</a><%
 					}
 					%>
 					<!-- 페이지 검색 -->
