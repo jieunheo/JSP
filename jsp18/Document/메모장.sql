@@ -6,9 +6,9 @@ drop table memo;
 /*------create table------*/
 create table memo
 (
-	no int primary key auto_increment comment '��ȣ',
-	title VARCHAR(200) comment '����',
-	note TEXT comment '�̸�'
+	no int primary key auto_increment comment '번호',
+	title VARCHAR(200) comment '제목',
+	note TEXT comment '이름'
 );
 show tables;
 desc memo;

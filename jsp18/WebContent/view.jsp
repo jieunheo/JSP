@@ -30,9 +30,7 @@ conn = DriverManager.getConnection(host, userid, userpw);
 //데이터 추가
 Statement stmt = conn.createStatement(); //작업 처리용 클래스 할당
 
-stmt = conn.createStatement();
 String sql = "select no,title,note from memo where no=" + no;
-
 ResultSet result = stmt.executeQuery(sql);
 if (result.next() == true)
 {
@@ -58,9 +56,6 @@ if (dto.GetNext())
 
 dto.CloseQuery();
 dto.DBClose();
-
-
-
 %>
 <!DOCTYPE html>
 <html>
