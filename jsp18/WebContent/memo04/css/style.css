@@ -20,7 +20,13 @@ div {
 }
 
 .wrap {
-	width: 900px;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.main, .sub {
+	width: 700px;
+	min-height: 570px;
 	margin: 0 auto;
 }
 
@@ -56,7 +62,7 @@ input:focus {
 
 /**** header ****/
 header {
-	padding: 20px 10px;
+	padding: 20px;
 }
 
 header a {
@@ -106,7 +112,7 @@ tbody tr:hover {
 }
 
 .paging {
-	padding-top: 5px;
+	padding: 5px 0 15px;
 	text-align: center;
 	background: #fdfdfd;
 }
@@ -165,6 +171,5 @@ footer {
 	margin-top: 20px;
 	padding: 20px;
 	text-align: center;
-	background: #46649B;
-	color: #fff;
+	color: #22304a;
 }
