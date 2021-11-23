@@ -117,7 +117,7 @@ if (end_block >= max_page)
 			%><a href="index.jsp?page=<%= max_page %>"> 맨뒤 </a><%
 		}
 		%>
-	<div>
+	</div>
 </div>
 <%@ include file="footer.jsp" %>
 <%
