@@ -28,6 +28,7 @@ dbms.DBClose();
 %>
 <form class="sub" name="write" method="post" action="modifyok.jsp">
 	<div class="modify">
+		<h3>글수정</h3>
 		<input type="hidden" name="no" value="<%= no %>">
 		<div>
 			<p>
