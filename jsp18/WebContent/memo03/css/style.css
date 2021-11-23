@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+body, h1, h2, h3, h4, h5, h6, a, ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h3 {
+	text-align: center;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+.wrap {
+	width: 700px;
+	margin: 0 auto;
+}
+
+.btn {
+	padding: 5px 10px;
+	border: 1px solid #46649B;
+	border-radius: 10px;
+	background-color: #fff;
+	color: #46649B;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.btn:hover {
+	background-color: #46649B;
+	color: #fff;
+}
+
+input:focus {
+	background: #eee;
+}
+
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+} 
+
+
+/**** header ****/
+header {
+	padding: 20px 0;
+}
+
+header a {
+	color: #46649B;
+}
+
+header a:hover {
+	color: #6495ED;
+}
+
+/**** main ****/
+.main .btn {
+	float: right;
+}
+
+.top {
+	margin-bottom: 20px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+
+thead {
+	background: #46649B;
+	color: #fff;
+}
+
+th, td {
+	padding: 5px;
+}
+
+td:first-child {
+	width: 70px;
+	text-align: center;
+}
+
+tbody tr:hover {
+	background: #efefef;
+}
+
+.paging {
+	text-align: center;
+}
+
+.paging a:hover {
+	color: red;
+}
+
+/**** sub ****/
+span {
+	display: inline-block;
+	width: 80px;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+input[type=text] {
+	width: 580px;
+}
+
+textarea {
+	width: 580px;
+	min-height: 300px;
+}
+
+.title span {
+	margin-right: 15px;
+}
+
+.note {
+	display: inline-block;
+	padding: 10px;
+	background: #fdfdfd;
+	width: 580px;
+	min-height: 300px;
+}
+
+.btns {
+	margin-top: 10px;
+	margin-right: 50px;
+	text-align: right;
+}
+
+/**** ok ****/
+.ok {
+	text-align: center;
+}
