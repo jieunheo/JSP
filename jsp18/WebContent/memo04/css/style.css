@@ -74,12 +74,15 @@ header a:hover {
 }
 
 /**** main ****/
-.main .btn {
-	float: right;
+.top {
+  position: relative;
 }
 
-.top {
-	margin-bottom: 20px;
+.top .btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 table {
@@ -122,6 +125,13 @@ tbody tr:hover {
 
 .paging a:hover {
 	color: red;
+	text-decoration: underline;
+}
+
+.now {
+	color: red;
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 /**** sub ****/
