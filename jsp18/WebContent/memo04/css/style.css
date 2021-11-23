@@ -50,7 +50,7 @@ div {
 }
 
 input:focus {
-	background: #eee;
+	background: #fafbfc;
 }
 
 .clearfix:after {
@@ -159,7 +159,7 @@ textarea {
 .note {
 	display: inline-block;
 	padding: 10px;
-	background: #fdfdfd;
+	background: #fafbfc;
 	width: 85%;
 	min-height: 300px;
 }
