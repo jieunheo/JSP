@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
+<%@ page import="ezen.*" %>
+
+<%
+DBManager dbms = new DBManager();
+dbms.DBOpen();
+%>
 <!DOCTYPE html>
 <html>
 	<head>

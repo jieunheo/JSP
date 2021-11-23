@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="ezen.*" %>
-    
+
+<%@ include file="header.jsp" %>
 <%
 int total = 0; //전체 게시물 갯수
 int max_page = 0;  //최대 페이지 갯수
@@ -22,9 +22,6 @@ if (request.getParameter("page") != null) //넘어온 페이지 번호
 {
 	cur_page = 1;
 }
-
-DBManager dbms = new DBManager();
-dbms.DBOpen();
 
 //전체 게시물 갯수
 sql += "select count(*) as count from memo ";
@@ -58,8 +55,6 @@ if (end_block >= max_page)
 	end_block = max_page;
 }
 %>
-
-<%@ include file="header.jsp" %>
 <div class="main">
 	<div class="top clearfix">
 		<a class="btn" href="write.jsp">글쓰기</a>

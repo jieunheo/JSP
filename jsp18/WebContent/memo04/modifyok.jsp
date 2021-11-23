@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="ezen.*" %>
     
+<%@ include file="header.jsp" %>
 <%
 //인코딩 방식
 request.setCharacterEncoding("UTF-8");
@@ -15,9 +15,6 @@ if(title == null || note == null || no == null)
 	return;
 }
 
-DBManager dbms = new DBManager();
-dbms.DBOpen();
-
 //데이터 추가
 String sql = "";
 sql += "update memo ";
@@ -29,8 +26,6 @@ dbms.RunSQL(sql);
 //닫기(*필수)
 dbms.DBClose();
 %>
-
-<%@ include file="header.jsp" %>
 <div class="sub">
 	<div class="ok">
 		<p>수정되었습니다.</p>

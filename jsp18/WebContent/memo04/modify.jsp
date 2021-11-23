@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="ezen.*" %>
     
+<%@ include file="header.jsp" %>
 <%
 String no    = request.getParameter("no");
 String title = "";
@@ -12,10 +12,6 @@ if (no == null)
 	return;
 }
 
-//JDBC 드라이버 로드
-DBManager dbms = new DBManager();
-dbms.DBOpen();
-
 String sql = "";
 
 //select
@@ -24,14 +20,12 @@ dbms.OpenQuery(sql);
 if (dbms.GetNext() == true)
 {
 	title = dbms.GetValue("title");
-	note = dbms.GetValue("note");
+	note = dbms.GetValue("note").replace("<br>", "\n");
 }
 dbms.CloseQuery();
 
 dbms.DBClose();
 %>
-
-<%@ include file="header.jsp" %>
 <form class="sub" name="write" method="post" action="modifyok.jsp">
 	<div class="modify">
 		<input type="hidden" name="no" value="<%= no %>">
