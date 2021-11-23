@@ -85,7 +85,6 @@ header a:hover {
 table {
 	width: 100%;
 	border-collapse: collapse;
-	margin-bottom: 10px;
 }
 
 thead {
@@ -108,13 +107,13 @@ td a {
 }
 
 tbody tr:hover {
-	background: #efefef;
+	background: #fafbfc;
 }
 
 .paging {
 	padding: 5px 0 15px;
 	text-align: center;
-	background: #fdfdfd;
+	background: #fafbfc;
 }
 
 .paging a {
