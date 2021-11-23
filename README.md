@@ -84,6 +84,8 @@ JSP 기초
   .jsp - JSP를 이용하여 DB 컨트롤  
   ### memo01 - DB컨트롤  
   ### memo02 - DBManager를 이용한 컨트롤  
+  ### memo03 - memo01 + css + jsp 인크루드  
+  ### memo04 - memo02 + css + jsp 인크루드  
   
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
