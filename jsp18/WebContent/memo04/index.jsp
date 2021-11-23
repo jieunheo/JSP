@@ -56,7 +56,8 @@ if (end_block >= max_page)
 }
 %>
 <div class="main">
-	<div class="top clearfix">
+	<div class="top">
+		<p>전체게시물 :  <strong><%= total %></strong></p>
 		<a class="btn" href="write.jsp">글쓰기</a>
 	</div>
 	<table>
@@ -89,7 +90,6 @@ if (end_block >= max_page)
 		</tbody>
 	</table>		
 	<div class="paging">
-		<p>전체게시물 :  <%= total %></p>
 		<%
 		//맨 앞으로
 		if( start_block >= page_cut ) //끝 페이지가 최대 페이지보다 작으면
@@ -104,7 +104,7 @@ if (end_block >= max_page)
 		//페이지 리스트
 		for ( int pageno = start_block; pageno <= end_block; pageno++ )
 		{
-			%><a href="index.jsp?page=<%= pageno %>" <% if (cur_page == pageno) {%>style="color:red;" <%} %>> <%= pageno %> </a>|<%
+			%><a href="index.jsp?page=<%= pageno %>" <% if (cur_page == pageno) {%>class="now" <%} %>> <%= pageno %> </a>|<%
 		}
 		//다음 페이지리스트
 		if( end_block < max_page ) //끝 페이지가 최대 페이지보다 작으면
