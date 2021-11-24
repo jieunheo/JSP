@@ -6,3 +6,6 @@
 		</table>
 	</body>
 </html>
+<%
+conn.close();
+%>
