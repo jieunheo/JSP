@@ -87,6 +87,12 @@ JSP 기초
   ### memo03 - memo01 + css + jsp 인크루드  
   ### memo04 - memo02 + css + jsp 인크루드  
   
+## board  
+  .jsp - JSP를 이용하여 DB 컨트롤  
+  ### board01 - html 파일  
+  ### board02 - html -> jsp + 인크루드  
+  ### board03 - db 연결  
+  
 ## myjsp  
   index.jsp - 나에게 값을 주는 형식 응용  
   
