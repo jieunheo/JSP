@@ -1,3 +1,7 @@
+/****** create database ******/
+create database boarddb;
+use boarddb;
+
 /****** drop table ******/
 drop table user;
 drop table fav;
