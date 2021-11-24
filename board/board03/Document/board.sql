@@ -36,8 +36,8 @@ create table board
 	btitle VARCHAR(250) comment '제목',
 	bkind VARCHAR(2) comment '구분',
 	bnote TEXT comment '내용',
-	bwdate DATETIME comment '작성일',
-	bhit INT comment '조회수',
+	bwdate DATETIME default now() comment '작성일',
+	bhit INT default 0 comment '조회수',
 	foreign key(uno) references user(uno)
 );
 
