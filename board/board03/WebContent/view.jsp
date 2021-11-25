@@ -44,7 +44,7 @@ if (result.next() == true)
 {
 	uno     = result.getString("uno");
 	btitle  = result.getString("btitle");
-	bnote   = result.getString("bnote");
+	bnote   = result.getString("bnote").replace("\n", "<br>");
 	bwdate  = result.getString("bwdate");
 	bhit    = result.getString("bhit");
 	w_uname = result.getString("uname");
