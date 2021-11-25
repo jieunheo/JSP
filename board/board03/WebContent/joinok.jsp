@@ -5,26 +5,26 @@
 request.setCharacterEncoding("UTF-8");
 
 //회원정보
-String id 			= request.getParameter("id");
-String pw 			= request.getParameter("pw");
-String name 		= request.getParameter("name");
-String gender 	= request.getParameter("gender");
-String hobby 		= request.getParameter("hobby");
+String uid 			= request.getParameter("uid");
+String upw 			= request.getParameter("upw");
+String uname 		= request.getParameter("uname");
+String ugender 	= request.getParameter("ugender");
+String uhobby 		= request.getParameter("uhobby");
 
 //관심분야
-String[] interest = request.getParameterValues("interest");
+String[] fkind = request.getParameterValues("fkind");
 
-if(id == null || pw == null || name == null || gender == null || hobby == null)
+if(uid == null || upw == null || uname == null || ugender == null || uhobby == null)
 {
 	out.println("데이터 입력 오류입니다.");
 	return;
 }
 
-switch (hobby)
+switch (uhobby)
 {
-	case "001": hobby = "낚시"; break;
-	case "002": hobby = "여행"; break;
-	case "003": hobby = "게임"; break;
+	case "001": uhobby = "낚시"; break;
+	case "002": uhobby = "여행"; break;
+	case "003": uhobby = "게임"; break;
 }
 
 /*
@@ -50,7 +50,7 @@ Statement stmt = conn.createStatement(); //작업 처리용 클래스 할당
 String sql = "";
 sql += "insert into user ";
 sql += "(uid,upw,uname,ugender,uhobby) ";
-sql += "values ('" + id + "','" + pw + "', '" + name + "', '" + gender + "', '" + hobby + "');";
+sql += "values ('" + uid + "','" + upw + "', '" + uname + "', '" + ugender + "', '" + uhobby + "');";
 stmt.executeUpdate(sql);
 
 //해당 uno값 가져오기
@@ -60,11 +60,11 @@ sql = "select last_insert_id() as uno;";
 ResultSet result = stmt.executeQuery(sql);
 if (result.next() == true) uno = result.getString("no");
 
-for (int i=0; i<interest.length; i++)
+for (int i=0; i<fkind.length; i++)
 {
 	String fname = "";
 	
-	switch (interest[i])
+	switch (fkind[i])
 	{
 		case "001": fname = "책"; break;
 		case "002": fname = "영화"; break;
@@ -73,7 +73,7 @@ for (int i=0; i<interest.length; i++)
 	sql = "";
 	sql += "insert into fav ";
 	sql += "(uno,fkind,fname) ";
-	sql += "values (" + uno + ", '" + interest[i] + "', '" + fname +"');";
+	sql += "values (" + uno + ", '" + fkind[i] + "', '" + fname +"');";
 }
 
 stmt.close(); //닫기

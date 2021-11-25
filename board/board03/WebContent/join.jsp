@@ -59,9 +59,9 @@
 		<tr>
 			<td>관심분야</td>
 			<td>
-				<input type="checkbox" value="001" name="fkind"  checked>책
-				<input type="checkbox" value="002" name="fkind">영화					
-				<input type="checkbox" value="003" name="fkind">유튜브					
+				<input type="checkbox" value="001" name="fkind" checked>책 
+				<input type="checkbox" value="002" name="fkind">영화 
+				<input type="checkbox" value="003" name="fkind">유튜브 
 			</td>
 		</tr>		
 		<tr>
