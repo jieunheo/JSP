@@ -2,6 +2,19 @@
     pageEncoding="UTF-8"%>
 
 <%@ include file="./include/header.jsp" %>
+<%
+if (o_uno == null)
+{
+	//response.sendRedirect("index.jsp");
+	%>
+	<script>
+		alert("잘못된 접근입니다.");
+		document.location = "index.jsp";
+	</script>
+	<%
+	return;
+}
+%>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <table border="0" style="width:100%;">
 	<tr>
