@@ -41,7 +41,6 @@ if (result.next() == false)
 	session.setAttribute("uno", uno);
 	session.setAttribute("uid", uid);
 	session.setAttribute("uname", uname);
-	response.sendRedirect("index.jsp");
 	%>
 	로그인이 완료되었습니다.<br>
 	<a href="index.jsp">처음 화면으로 돌아가기</a>
