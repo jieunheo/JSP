@@ -55,7 +55,7 @@ if (result.next() == true)
 	sql = "";
 	sql += "insert into user ";
 	sql += "(uid,upw,uname,ugender,uhobby) ";
-	sql += "values ('" + uid + "', '" + upw + "', '" + uname + "', '" + ugender + "', '" + uhobby + "');";
+	sql += "values ('" + uid + "', md5('" + upw + "'), '" + uname + "', '" + ugender + "', '" + uhobby + "');";
 	System.out.println("SQL: " + sql);
 	stmt.executeUpdate(sql);
 
