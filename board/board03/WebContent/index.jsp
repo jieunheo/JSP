@@ -11,7 +11,15 @@
 	</tr>
 	<tr>
 		<td style="height:25px; text-align:right;">
-			<a href="write.jsp">글쓰기</a>
+		<%
+		if (o_uno == null)
+		{
+			%><a href="javascript:alert('로그인 해주세요');" onclick="WriteCheck()">글쓰기</a><%
+		} else
+		{
+			%><a href="write.jsp" onclick="WriteCheck()">글쓰기</a><%
+		}
+		%>
 		</td>
 	</tr>						
 	<tr>
