@@ -15,6 +15,11 @@ String userpw = "ezen"; //pw
 //db연결
 Connection conn = null;
 conn = DriverManager.getConnection(host, userid, userpw);
+
+//로그인 여부 검사
+String o_uno = (String)session.getAttribute("uno");
+String o_uid = (String)session.getAttribute("uid");
+String o_uname = (String)session.getAttribute("uname");
 %>
 <!DOCTYPE html>
 <html>
@@ -38,10 +43,23 @@ conn = DriverManager.getConnection(host, userid, userpw);
 								</a>
 							</td>
 							<td style="text-align:right;">
+							<% 
+							if (o_uno == null)
+							{
+								//로그인 안된 경우
+								%>
 								<a href="join.jsp">회원가입</a>
 								&nbsp;&nbsp;
 								<a href="login.jsp">로그인</a>
 								&nbsp;
+								<%
+							} else
+							{
+								%>
+								<%= o_uname %>님 안녕하세요 [ <a href="logout.jsp">로그아웃</a> ]
+								<%
+							}
+							%>
 							</td>
 						</tr>
 					</table>
