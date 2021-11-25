@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ include file="./include/header.jsp" %>
 <%
 //인코딩 방식
 request.setCharacterEncoding("UTF-8");
@@ -35,10 +37,7 @@ if (fkind != null) //관심분야 값이 있을 때만 출력
 		System.out.println("kind" + (i+1) + ": " + fkind[i]);
 	}
 }
-%>
 
-<%@ include file="./include/header.jsp" %>
-<%
 Statement stmt = conn.createStatement();
 
 //아이디 중복 확인
