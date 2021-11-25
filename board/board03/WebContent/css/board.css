@@ -21,3 +21,8 @@ table
 {
 	background-color: #cccccc;
 }
+
+input:focus, textarea:focus
+{
+	background: #e1e1f2;
+}
