@@ -44,7 +44,7 @@ if (result.next() == true)
 {
 	uno     = result.getString("uno");
 	btitle  = result.getString("btitle");
-	bnote   = result.getString("bnote").replace("\n", "<br>");
+	bnote   = result.getString("bnote");
 	bwdate  = result.getString("bwdate");
 	bhit    = result.getString("bhit");
 	w_uname = result.getString("uname");
@@ -59,8 +59,10 @@ if (result.next() == true)
 	return;
 }
 
-
-
+//게시글 내용 정리
+bnote   = bnote.replace("\n", "<br>");
+bnote   = bnote.replace("<", "&lt;");
+bnote   = bnote.replace(">", "&gt;");
 
 stmt.close();
 %>
