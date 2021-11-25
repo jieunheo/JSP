@@ -41,7 +41,7 @@ if (fkind != null) //관심분야 값이 있을 때만 출력
 <%
 Statement stmt = conn.createStatement();
 
-//전체 개시물 갯수
+//아이디 중복 확인
 String sql = "";
 sql += "select uid from user where uid = '" + uid + "';";
 System.out.println("SQL: " + sql);
