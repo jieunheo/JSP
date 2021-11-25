@@ -60,9 +60,9 @@ if (result.next() == true)
 }
 
 //게시글 내용 정리
-bnote   = bnote.replace("\n", "<br>");
 bnote   = bnote.replace("<", "&lt;");
 bnote   = bnote.replace(">", "&gt;");
+bnote   = bnote.replace("\n", "<br>");
 
 stmt.close();
 %>
@@ -101,8 +101,8 @@ stmt.close();
 	<tr>
 		<td colspan="2" align="center" style="height:40px;">
 		<a href="index.jsp">글목록</a>&nbsp;|&nbsp;
-		<a href="modify.jsp?bno=<%= bno %>">글수정</a>&nbsp;|&nbsp;
-		<a href="delete.jsp?bno=<%= bno %>">글삭제</a>
+		<a href="modify.jsp">글수정</a>&nbsp;|&nbsp;
+		<a href="delete.jsp">글삭제</a>
 		</td>
 	</tr>																													
 </table>
