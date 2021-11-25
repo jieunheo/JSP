@@ -1,35 +1,35 @@
 # JSP  
 JSP 기초  
   
-## jsp01  
+## 01_variable  
   index.jsp - 변수 사용  
   
-## jsp02  
+## 02_loop  
   index.jsp - 반복문 사용  
   
-## jsp03  
+## 03_table  
   index.jsp - 테이블 사용  
   
-## jsp04  
+## 04_contentType  
   index.jsp - contentType값 수정(image/jpeg)  
   index1.jsp - contentType값 수정(text/plain)  
   
-## jsp05  
+## 05_form01  
   index.jsp - form 사용  
   data.jsp - form에서 넘어온 값 받음  
   
-## jsp06  
+## 06_form02  
   index.jsp - 나에게 값을 주는 형식 사용  
   
-## jsp07  
+## 07_class  
   index.jsp - Person 클래스 값 받아오기  
   ezen/Person.java - Person 클래스  
   
-## jsp08  
+## 08_include01  
   index.jsp - include 사용  
   sub.jsp - include 받는 파일  
   
-## jsp09  
+## 09_include02  
   index.jsp - include 메인 화면  
   header.jsp - include 상단 화면  
   nav.jsp - include 메뉴 화면  
@@ -38,7 +38,7 @@ JSP 기초
   menu02.jsp - include menu02 화면  
   menu03.jsp - include menu03 화면  
   
-## jsp10  
+## 10_include03  
   index.jsp - include 메인 화면  
   header.jsp - include 상단 화면  
   footer.jsp - include 하단 화면  
@@ -49,38 +49,38 @@ JSP 기초
   modify.jsp - include modify 화면  
   modifyok.jsp - include modifyok 화면  
   
-## jsp11  
+## 11_request  
   index.jsp - request 예제  
   
-## jsp12  
+## 12_cal_ex01  
   index.jsp - 계산기 예제  
   data.jsp - 계산 예제  
   
-## jsp13  
+## 13_cal_ex02  
   cal.jsp - 계산기 예제  
   cal2.jsp - 계산기 예제 jsp 보완  
   
-## jsp14  
+## 14_cookie  
   index.jsp - 쿠키 예제  
   view.jsp - 쿠키 받는 곳  
   
-## jsp15  
+## 15_Session  
   index.jsp - 세션 예제  
   view.jsp - 세션 받는 곳  
   
-## jsp16  
+## 16_login01  
   index.jsp - 로그인 예제  
   login.jsp - 로그인  
   loginok.jsp - 로그인 확인  
   logout.jsp - 로그아웃  
   
-## jsp17  
+## 17_login02  
   index.jsp - 로그인 예제2  
   login.jsp - 로그인2  
   loginok.jsp - 로그인 확인2  
   logout.jsp - 로그아웃2  
   
-## jsp18  
+## jspDB  
   .jsp - JSP를 이용하여 DB 컨트롤  
   ### memo01 - DB컨트롤  
   ### memo02 - DBManager를 이용한 컨트롤  
