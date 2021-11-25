@@ -16,9 +16,9 @@ create table user
 	upw VARCHAR(100) comment '비밀번호',
 	uname VARCHAR(50) comment '이름',
 	ugender VARCHAR(2) comment '성별',
-	uhabby VARCHAR(4) comment '취미',
+	uhobby VARCHAR(4) comment '취미',
 	uretire VARCHAR(2) default 'N' comment '탈퇴여부',
-	ujoindate DATETIM default now() comment '가입일자'
+	ujoindate DATETIME default now() comment '가입일자'
 );
 
 create table fav
@@ -51,3 +51,11 @@ create table attach
 	foreign key(uno) references user(uno),
 	foreign key(bno) references board(bno)
 );
+
+
+
+
+/****** insert ******/
+insert into user
+(uid,upw,uname,ugender,uhobby)
+values ('test3','1234', 'heo', 'M', '002');
