@@ -37,11 +37,11 @@
 	<table border="1" style="width:100%;">
 		<tr>
 			<td style="text-align:center;width:120px;">아이디 (*) </td>
-			<td><input type="text" name="uid"></td>
+			<td><input type="text" name="uid" value="ezen"></td>
 		</tr>
 		<tr>
 			<td style="text-align:center;width:120px;">비밀번호 (*) </td>
-			<td><input type="password" name="upw"></td>
+			<td><input type="password" name="upw" value="ezen"></td>
 		</tr>
 		<tr>
 			<td colspan="2" style="text-align:center;">
