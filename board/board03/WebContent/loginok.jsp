@@ -20,18 +20,24 @@ Statement stmt = conn.createStatement();
 
 //로그인 확인
 String sql = "";
-sql += "select uno,uname";
+sql += "select uno,uname ";
 sql += "from user ";
 sql += "where uid = '" + uid + "' ";
-sql += "and upw = '" + upw + "' ";
+sql += "and upw = md5('" + upw + "') ";
 sql += "and uretire = 'N';";
 System.out.println("SQL: " + sql);
 ResultSet result = stmt.executeQuery(sql);
 if (result.next() == false)
 {
 	%>
-	아이디 비밀번호가 일치하지 않습니다.<br>
+	<!--
+	아이디 또는 비밀번호가 일치하지 않습니다.<br>
 	<a href="login.jsp">로그인 화면으로 돌아가기</a>
+	-->
+	<script>
+		alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+		document.location = "login.jsp";
+	</script>
 	<%
 } else
 {
@@ -42,8 +48,14 @@ if (result.next() == false)
 	session.setAttribute("uid", uid);
 	session.setAttribute("uname", uname);
 	%>
+	<!--
 	로그인이 완료되었습니다.<br>
 	<a href="index.jsp">처음 화면으로 돌아가기</a>
+	-->
+	<script>
+		alert("로그인이 되었습니다.");
+		document.location = "index.jsp";
+	</script>
 	<%
 }
 %>
