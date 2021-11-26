@@ -7,12 +7,12 @@
 String bno = request.getParameter("bno"); //게시물번호
 
 //사용할 변수
-String uno		  = ""; //회원번호
-String btitle   = ""; //제목
-String bnote 	  = "";	//내용
-String bwdate   = "";	//작성일
-String bhit 	  = "";	//조회수
-String w_uname 	= "";	//작성자
+String uno		 = ""; //회원번호
+String btitle  = ""; //제목
+String bnote 	 = "";	//내용
+String bwdate  = "";	//작성일
+String bhit 	 = "";	//조회수
+String uname 	 = "";	//작성자
 
 
 //빈 값 확인
@@ -42,12 +42,12 @@ sql += "where bno=" + bno;
 ResultSet result = stmt.executeQuery(sql);
 if (result.next() == true)
 {
-	uno     = result.getString("uno");
-	btitle  = result.getString("btitle");
-	bnote   = result.getString("bnote");
-	bwdate  = result.getString("bwdate");
-	bhit    = result.getString("bhit");
-	w_uname = result.getString("uname");
+	uno    = result.getString("uno");
+	btitle = result.getString("btitle");
+	bnote  = result.getString("bnote");
+	bwdate = result.getString("bwdate");
+	bhit   = result.getString("bhit");
+	uname  = result.getString("uname");
 } else
 {
 	%>
@@ -81,7 +81,7 @@ stmt.close();
 	</tr>
 	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">작성자</td>
-		<td><%= w_uname %></td>
+		<td><%= uname %></td>
 	</tr>
 	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">작성일</td>
@@ -100,9 +100,18 @@ stmt.close();
 	</tr>	
 	<tr>
 		<td colspan="2" align="center" style="height:40px;">
-		<a href="index.jsp">글목록</a>&nbsp;|&nbsp;
-		<a href="modify.jsp">글수정</a>&nbsp;|&nbsp;
-		<a href="delete.jsp">글삭제</a>
+		<a href="index.jsp">글목록</a>
+		<%
+		if (o_uno.equals(uno))
+		{
+			//로그인한 사람과 게시글 작성자가 같으면 수정,삭제 보이도록
+			%>
+			&nbsp;|&nbsp;
+			<a href="modify.jsp?bno=<%= bno %>">글수정</a>&nbsp;&nbsp;|&nbsp;
+			<a href="delete.jsp?bno=<%= bno %>">글삭제</a>
+			<%
+		}
+		%>
 		</td>
 	</tr>																													
 </table>
