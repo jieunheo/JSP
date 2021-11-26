@@ -68,6 +68,20 @@ bnote   = bnote.replace("<", "&lt;");
 bnote   = bnote.replace(">", "&gt;");
 bnote   = bnote.replace("\n", "<br>");
 
+//첨부파일 얻기
+sql = "";
+sql += "select ano,fname ";
+sql += "from attach ";
+sql += "where bno=" + bno;
+result = stmt.executeQuery(sql);
+String ano   = ""; //첨부파일 번호
+String fname = ""; //첨부파일 이름
+if (result.next() == true)
+{
+	ano   = result.getString("ano");
+	fname = result.getString("fname");
+}
+
 stmt.close();
 %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
@@ -109,7 +123,16 @@ stmt.close();
 	</tr>	
 	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">첨부파일</td>
-		<td>test.hwp</td>
+		<td>
+		<%
+		if(fname.equals("")) {
+			%>첨부파일이 없습니다.<%
+		} else
+		{
+			%><a href="download.jsp?fno=<%= ano %>"><%= fname %></a><%
+		}
+		%>
+		</td>
 	</tr>	
 	<tr>
 		<td colspan="2" align="center" style="height:40px;">
