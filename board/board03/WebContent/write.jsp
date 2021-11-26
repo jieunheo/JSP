@@ -3,6 +3,10 @@
 
 <%@ include file="./include/header.jsp" %>
 <%
+//값 받아오기
+String kind   = request.getParameter("kind"); //구분
+String pageno = request.getParameter("page"); //페이지번호
+
 if (o_uno == null)
 {
 	//response.sendRedirect("index.jsp");
@@ -46,7 +50,8 @@ function FormCheck()
 		</td>
 	</tr>
 </table>		
-<form name="write" method="post" action="writeok.jsp" onsubmit="return FormCheck();">
+<form name="write" method="post" action="writeok.jsp" onsubmit="return FormCheck();" enctype="multipart/form-data">
+	<input type="hidden" name="page" value="<%= pageno %>">
 	<table border="0" style="width:100%; margin:0px 0px 0px 0px;padding:0px 0px 0px 0px ; border: 1px;">
 		<tr>
 			<td style="width:120px; text-align:center; background-color:#f4f4f4">제목</td>
