@@ -43,7 +43,6 @@ sql += bnote.replace("'","''") + "');";
 System.out.println("SQL: " + sql);
 stmt.executeUpdate(sql);
 
-
 sql = "select last_insert_id() as bno;";
 ResultSet result = stmt.executeQuery(sql);
 result = stmt.executeQuery(sql);
