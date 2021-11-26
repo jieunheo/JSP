@@ -33,15 +33,30 @@
 					<td style="text-align:center; background-color:#f2f2f2;width: 70px;">조회수</td>						
 				</tr>
 				<%
-				for (int i=1; i<=10; i++)
+				Statement stmt = conn.createStatement();
+				
+				String sql = "";
+				sql += "select u.uname,u.uno,bno,btitle,bwdate,bhit ";
+				sql += "from board as b ";
+				sql += "inner join user as u ";
+				sql += "on b.uno = u.uno ";
+				sql += "order by bno desc ";
+				
+				ResultSet result = stmt.executeQuery(sql);
+				while (result.next() == true)
 				{
+					String bno    = result.getString("bno");
+					String btitle = result.getString("btitle");
+					String bwdate = result.getString("bwdate").replace("-", ".").substring(0, 10);
+					String bhit   = result.getString("bhit");
+					String uname  = result.getString("uname");
 					%>
 					<tr>
-						<td style="text-align:center;"><%= i %></td>
-						<td><a href="view.jsp">자바 기초 문법 <%= i %> 강의 입니다.</a> <span style="color:#ff6600">(12)</span></td>
-						<td style="text-align:center;">2021.11.10</td>
-						<td style="text-align:center;">홍길동</td>
-						<td style="text-align:center;">10</td>
+						<td style="text-align:center;"><%= bno %></td>
+						<td><a href="view.jsp?bno=<%= bno %>"><%= btitle %></a></td>
+						<td style="text-align:center;"><%= bwdate %></td>
+						<td style="text-align:center;"><%= uname %></td>
+						<td style="text-align:center;"><%= bhit %></td>
 					</tr>
 					<%
 				}	
