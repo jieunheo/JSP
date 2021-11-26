@@ -3,14 +3,16 @@
 
 <%@ include file="./include/header.jsp" %>
 <%
-//게시물 번호 받아오기
-String bno = request.getParameter("bno"); //게시물번호
+//값 받아오기
+String bno    = request.getParameter("bno");  //게시물번호
+String kind   = request.getParameter("kind"); //구분
+String pageno = request.getParameter("page"); //페이지번호
 
 //사용할 변수
 String uno		 = ""; //회원번호
 String btitle  = ""; //제목
 String bnote 	 = "";	//내용
-String bkind 	 = "";	//구분
+String bkind 	 = kind;	//구분
 String bwdate  = "";	//작성일
 String bhit 	 = "";	//조회수
 String uname 	 = "";	//작성자
@@ -118,8 +120,8 @@ stmt.close();
 			//로그인한 사람과 게시글 작성자가 같으면 수정,삭제 보이도록
 			%>
 			&nbsp;|&nbsp;
-			<a href="modify.jsp?bno=<%= bno %>">글수정</a>&nbsp;&nbsp;|&nbsp;
-			<a href="delete.jsp?bno=<%= bno %>">글삭제</a>
+			<a href="modify.jsp?kind=<%= kind %>&page=<%= pageno %>&bno=<%= bno %>">글수정</a>&nbsp;&nbsp;|&nbsp;
+			<a href="delete.jsp?kind=<%= kind %>&page=<%= pageno %>&bno=<%= bno %>">글삭제</a>
 			<%
 		} 
 		%>
