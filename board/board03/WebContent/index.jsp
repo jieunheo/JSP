@@ -51,7 +51,7 @@ sql += "select u.uname,u.uno,bno,btitle,date_format(bwdate,'%Y.%m.%d') as bwdate
 sql += "from board as b ";
 sql += "inner join user as u ";
 sql += "on b.uno = u.uno ";
-sql += "where bkind = '" + kind + "' ";
+sql += "where bkind = '" + kind + "' "; //구분에 따른 전체 갯수
 sql += "order by bno desc ";
 //(7)페이지 당 가져올 게시물 limit
 sql += "limit " + start_no + ", " + paging_list + ";";
