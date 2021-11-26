@@ -113,7 +113,7 @@ stmt.close();
 	</tr>	
 	<tr>
 		<td colspan="2" align="center" style="height:40px;">
-		<a href="index.jsp">글목록</a>
+		<a href="index.jsp?kind=<%= kind %>&page=<%= pageno %>">글목록</a>
 		<%
 		if (o_uno != null && o_uno.equals(uno))
 		{
