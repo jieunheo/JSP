@@ -36,7 +36,7 @@
 				Statement stmt = conn.createStatement();
 				
 				String sql = "";
-				sql += "select u.uname,u.uno,bno,btitle,bwdate,bhit ";
+				sql += "select u.uname,u.uno,bno,btitle,date_format(bwdate,'%Y.%m.%d') as bwdate,bhit ";
 				sql += "from board as b ";
 				sql += "inner join user as u ";
 				sql += "on b.uno = u.uno ";
@@ -47,7 +47,7 @@
 				{
 					String bno    = result.getString("bno");
 					String btitle = result.getString("btitle");
-					String bwdate = result.getString("bwdate").replace("-", ".").substring(0, 10);
+					String bwdate = result.getString("bwdate");
 					String bhit   = result.getString("bhit");
 					String uname  = result.getString("uname");
 					%>
