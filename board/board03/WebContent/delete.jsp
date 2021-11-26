@@ -3,7 +3,7 @@
 
 <%@ include file="./include/header.jsp" %>
 <%
-String bno = request.getParameter("bno"); //게시물 번호
+String bno    = request.getParameter("bno");  //게시물 번호
 String kind   = request.getParameter("kind"); //구분
 String pageno = request.getParameter("page"); //페이지번호
 
