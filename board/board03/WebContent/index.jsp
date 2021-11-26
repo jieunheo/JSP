@@ -14,9 +14,15 @@ int page_cut    = 10; //나열될 페이지 번호의 갯수
 int start_block = 0;  //페이징 시작 블록 번호
 int end_block   = 0;  //페이징 끝 블록 번호
 
-//kind의 값 분석(J/H)
+//kind 값 분석(J/H)
 String kind = request.getParameter("kind");
 if (kind == null)	kind = "J"; //값이 없으면 J로
+//pageno 값 분석
+int pageno = 1;
+if (request.getParameter("page") != null)
+{
+	pageno = Integer.parseInt(request.getParameter("page"));
+}
 
 //(5)넘어온 값 page를 분석
 if (request.getParameter("page") != null) //넘어온 페이지 번호
@@ -117,7 +123,7 @@ if (end_block >= max_page)
 					%>
 					<tr>
 						<td style="text-align:center;"><%= seqno-- %></td>
-						<td><a href="view.jsp?bno=<%= bno %>"><%= btitle %></a></td>
+						<td><a href="view.jsp?kind=<%= kind %>&page=<%= pageno %>&bno=<%= bno %>"><%= btitle %></a></td>
 						<td style="text-align:center;"><%= bwdate %></td>
 						<td style="text-align:center;"><%= uname %></td>
 						<td style="text-align:center;"><%= bhit %></td>
@@ -134,14 +140,14 @@ if (end_block >= max_page)
 		<%
 		//(3)최개 페이지 갯수만큼 페이지 표시
 		/*
-		for (int pageno = 1; pageno<=maxpage; pageno++)
+		for (pageno = 1; pageno<=maxpage; pageno++)
 		{
 			%> <%= pageno %> |<%
 		}
 		*/
 		/*
 		//(4)최개 페이지 갯수만큼 페이지 표시
-		for (int pageno = 1; pageno<=max_page; pageno++)
+		for (pageno = 1; pageno<=max_page; pageno++)
 		{
 			%><a href="index.jsp?no=<%= pageno %>"> <%= pageno %> </a> |<%
 		}
@@ -152,7 +158,7 @@ if (end_block >= max_page)
 			%><a href="index.jsp?kind=<%= kind %>&page=<%= start_block - 1 %>">◀</a> |<%
 		}
 		//(11)시작 블록 번호부터 끝 블록 번호까지 출력
-		for (int pageno = start_block; pageno <= end_block; pageno++)
+		for (pageno = start_block; pageno <= end_block; pageno++)
 		{
 			%><a href="index.jsp?kind=<%= kind %>&page=<%= pageno %>" <% if (cur_page == pageno) {%>style="color:red;" <%} %>> <%= pageno %> </a>|<%
 		}
