@@ -73,7 +73,12 @@ if (end_block >= max_page)
 <table border="0" style="width:100%;">
 	<tr>
 		<td style="height:40px">
-			<span style="font-weight:bold; color:red;">※ 자바학습 게시판</span>
+			<span style="font-weight:bold; color:red;">※
+			<%
+			if(kind.equals("J")) %>자바학습 게시판<% 
+			else %>HTML학습 게시판<%
+			%>
+			</span>
 		</td>
 	</tr>
 	<tr>
