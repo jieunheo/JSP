@@ -10,6 +10,7 @@ String bno = request.getParameter("bno"); //게시물번호
 String uno		 = ""; //회원번호
 String btitle  = ""; //제목
 String bnote 	 = "";	//내용
+String bkind 	 = "";	//구분
 String bwdate  = "";	//작성일
 String bhit 	 = "";	//조회수
 String uname 	 = "";	//작성자
@@ -34,7 +35,7 @@ sql += "update board set bhit = bhit + 1 where bno = " + bno + ";";
 stmt.executeUpdate(sql);
 
 sql = "";
-sql += "select u.uname,u.uno,btitle,bnote,bwdate,bhit ";
+sql += "select u.uname,u.uno,btitle,bkind,bnote,bwdate,bhit ";
 sql += "from board as b ";
 sql += "inner join user as u ";
 sql += "on b.uno = u.uno ";
@@ -45,6 +46,7 @@ if (result.next() == true)
 	uno    = result.getString("uno");
 	btitle = result.getString("btitle");
 	bnote  = result.getString("bnote");
+	bkind  = result.getString("bkind");
 	bwdate = result.getString("bwdate");
 	bhit   = result.getString("bhit");
 	uname  = result.getString("uname");
@@ -76,6 +78,15 @@ stmt.close();
 </table>
 <table border="" style="width:100%;">
 	<tr>
+		<td style="background-color:#f4f4f4; width:120px;">구분</td>
+		<td>
+		<%
+		if(bkind.equals("J")) %>자바학습 게시판<% 
+		else %>HTML학습 게시판<%
+		%>
+		</td>
+	</tr>
+	<tr>
 		<td style="background-color:#f4f4f4; width:120px;">제목</td>
 		<td><%= btitle %></td>
 	</tr>
@@ -102,7 +113,7 @@ stmt.close();
 		<td colspan="2" align="center" style="height:40px;">
 		<a href="index.jsp">글목록</a>
 		<%
-		if (o_uno.equals(uno))
+		if (o_uno != null && o_uno.equals(uno))
 		{
 			//로그인한 사람과 게시글 작성자가 같으면 수정,삭제 보이도록
 			%>
@@ -110,7 +121,7 @@ stmt.close();
 			<a href="modify.jsp?bno=<%= bno %>">글수정</a>&nbsp;&nbsp;|&nbsp;
 			<a href="delete.jsp?bno=<%= bno %>">글삭제</a>
 			<%
-		}
+		} 
 		%>
 		</td>
 	</tr>																													
