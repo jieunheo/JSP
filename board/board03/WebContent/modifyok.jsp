@@ -14,11 +14,11 @@ String bkind 	= request.getParameter("bkind");	//구분
 String bnote 	= request.getParameter("bnote");	//내용
 
 //빈 값 확인
-if(uno == null || btitle == null || bkind == null || bnote == null)
+if(btitle == null || bkind == null || bnote == null)
 {
 	%>
 	<script>
-		alert("잘못된 접근입니다.");
+		alert("빈 값이 있습니다.");
 		document.location = "index.jsp";
 	</script>
 	<%
@@ -31,9 +31,24 @@ System.out.println("bkind: " + bkind);
 System.out.println("bnote: " + bnote);
 
 Statement stmt = conn.createStatement();
+String sql = "";
+
+//잘못된 접근 막기
+sql = "select uno,bno from board where bno = " + bno + " and uno = " + o_uno + ";";
+ResultSet result = stmt.executeQuery(sql);
+if (uno == null || bno == null || result.next() == false)
+{ //번호가 비어있거나 존재하지 않는 번호일 때
+	%>
+	<script>
+		alert("비정상적인 접근입니다.");
+		document.location = "index.jsp";
+	</script>
+	<%
+	return;
+}
 
 //insert 처리
-String sql = "";
+sql = "";
 sql += "update board ";
 sql += "set btitle = '" + btitle.replace("'","''") + "', ";
 sql += "bkind = '" + bkind + "', ";
@@ -45,9 +60,9 @@ stmt.close();
 
 %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
-글쓰기가 완료되었습니다.<br>
-<a href="view.jsp?kind=<%= bkind %>&page=<%= pageno %>&bno=<%= bno %>">작성글 보기</a>|
-<a href="write.jsp">글쓰기</a>|
-<a href="index.jsp">첫 페이지로 이동</a>
+<script>
+	alert("수정이 완료되었습니다.");
+	document.location = "view.jsp?kind=<%= bkind %>&page=<%= pageno %>&bno=<%= bno %>";
+</script>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <%@ include file="./include/footer.jsp" %>
