@@ -45,7 +45,7 @@
 		<tr>
 			<td style="text-align:center;" colspan="2">
 				<input type="submit" value="글수정 완료">
-				<a href="view.html">글수정 취소</a>
+				<a href="view.jsp">글수정 취소</a>
 			</td>
 		</tr>
 	</table>					
