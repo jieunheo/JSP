@@ -25,7 +25,11 @@ if (bno == null || result.next() == false)
 }
 
 //삭제
-sql = "delete from board where bno=" + bno + " and uno = " + o_uno + ";";
+//외래키로 인해 첨부파일 먼저 삭제해야 함
+sql = "delete from attach where bno = " + bno + ";";
+stmt.executeUpdate(sql);
+
+sql = "delete from board where bno = " + bno + " and uno = " + o_uno + ";";
 stmt.executeUpdate(sql);
 
 stmt.close();
