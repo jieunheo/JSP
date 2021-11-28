@@ -30,19 +30,13 @@ String o_uname = (String)session.getAttribute("uname");
 		<script type="text/javascript" src="./js/board.js" defer></script>
 	</head>
 	<body>
-		<table border="1" width="900px" align="center">
+		<table width="900px" align="center">
 			<tr>
-				<td colspan="3" style="height:60px;">
-					<table border="0" style="width:100%; height:60px;">
+				<td colspan="3">
+					<table>
 						<tr>
-							<td>
-								<a href="index.jsp">
-								<span style="color:red; font-size:15pt; font-weight:bold;">
-								자바학습 커뮤니티
-								</span>
-								</a>
-							</td>
-							<td style="text-align:right;">
+							<h1><a href="index.jsp">자바학습 커뮤니티</a></h1>
+							<div class="logWrap">
 							<% 
 							if (o_uno == null)
 							{
@@ -60,7 +54,7 @@ String o_uname = (String)session.getAttribute("uname");
 								<%
 							}
 							%>
-							</td>
+							</div>
 						</tr>
 					</table>
 				</td>
