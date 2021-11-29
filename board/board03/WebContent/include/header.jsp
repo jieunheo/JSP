@@ -56,7 +56,6 @@ String o_uname = (String)session.getAttribute("uname");
 			<div class="main clearfix">
 					<div class="nav">
 						<div class="submenu"><a href="index.jsp?kind=J">자바 학습 게시판</a></div>
-						<div style="height:2px; background-color:#ffffff;"></div>
 						<div class="submenu"><a href="index.jsp?kind=H">HTML학습 게시판</a></div>
 					</div>
 					<div class="contents">
