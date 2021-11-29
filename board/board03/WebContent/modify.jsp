@@ -55,6 +55,20 @@ bnote  = result.getString("bnote");
 bkind  = result.getString("bkind");
 uname  = result.getString("uname");
 
+//첨부파일 얻기
+sql = "";
+sql += "select ano,fname ";
+sql += "from attach ";
+sql += "where bno=" + bno;
+result = stmt.executeQuery(sql);
+String ano   = ""; //첨부파일 번호
+String fname = ""; //첨부파일 이름
+if (result.next() == true)
+{
+	ano   = result.getString("ano");
+	fname = result.getString("fname");
+}
+
 %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <script>
@@ -87,7 +101,7 @@ function FormCheck()
 		</td>
 	</tr>
 </table>		
-<form name="modify" method="post" action="modifyok.jsp" onsubmit="return FormCheck();">
+<form name="modify" method="post" action="modifyok.jsp" onsubmit="return FormCheck();" enctype="multipart/form-data">
 	<input type="hidden" name="page" value="<%= pageno %>">
 	<input type="hidden" name="bno" value="<%= bno %>">
 	<table border="0" style="width:100%; margin:0px 0px 0px 0px;padding:0px 0px 0px 0px ; border: 1px;">
@@ -109,8 +123,20 @@ function FormCheck()
 			</td>
 		</tr>
 		<tr>
-			<td style="width:120px; text-align:center; background-color:#f4f4f4">첨부파일</td>
+			<td rowspan="2" style="width:120px; text-align:center; background-color:#f4f4f4">첨부파일</td>
 			<td><input name="attach" type="file" style="width:95%"></td>
+		</tr>
+		<tr>
+			<td>
+			<%
+			if(fname.equals("")) {
+				%>첨부파일이 없습니다.<%
+			} else
+			{
+				%><a href="download.jsp?fno=<%= ano %>"><%= fname %></a><%
+			}
+			%>
+			</td>
 		</tr>
 		<tr>
 			<td colspan="2" style="height:1px;background-color:#cccccc"></td>
