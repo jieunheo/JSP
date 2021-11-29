@@ -2,12 +2,49 @@
 
 body
 {
-	background-color:#f4f4f4;	
+	background-color: #f4f4f4;	
+}
+
+div {
+	box-sizing: border-box;
+}
+
+input[type=submit],
+input[type=button] {
+	outline: 0;
+	border: none;
+	cursor: pointer;
+}
+
+.btn {
+	background: #7091b8;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.btn:hover {
+	background: #84A1B3;
+}
+
+.s_btn {
+	border-radius: 5px;
+}
+
+.s_btn:hover {
+	background: #84A1B3;
+	color: #fff;
 }
 
 table
 {
-	background-color:white;
+	background-color: white;
+}
+
+.wrap {
+	width: 100%;
+	text-align: center;
 }
 
 .submenu
@@ -20,4 +57,13 @@ table
 .submenu:hover
 {
 	background-color: #cccccc;
+}
+
+/* check */
+.check {
+	background: #fff;
+}
+
+.check span {
+	font-weight: bold;
 }
