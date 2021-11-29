@@ -4,6 +4,10 @@
 <%@ include file="./include/header.jsp" %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <script>
+	//아이디 중복 여부 플래그
+	//0-ID중복체크안함,1-ID중복안됨,2-ID중복됨
+	var IsDupCheck = 0;
+
 	//페이지 로딩 되자마자
 	window.onload = function()
 	{
@@ -28,20 +32,72 @@
 			document.join.upw.focus();
 			return false;
 		}
+
+		if(document.join.uname.value == "")
+		{
+			alert("이름을 입력해주세요.");
+			document.join.uname.focus();
+			return false;
+		}
 		
 		//비밀번호 확인이 다르면
-		if(document.join.upw.value == document.join.upwcheck.value)
+		if(document.join.upw.value != document.join.upwcheck.value)
 		{
 			alert("비밀번호가 일치하지 않습니다.");
 			document.join.upw.focus();
 			return false;
 		}
+		
+		if(IsDupCheck == 0)
+		{
+			alert("아이디 중복 체크를 해주세요.");
+			return false;
+		}
+		if(IsDupCheck == 2)
+		{
+			alert("중복된 아이디입니다.");
+			return false;
+		}
+		
+		//마지막 알림
+		if(confirm("회원가입을 진행하시겠습니까?") != 1)
+		{
+			return false;
+		}
+		return true;
 	}
 	
 	//메인 화면으로 이동
 	function GoIndex()
 	{
+		if(confirm("회원가입을 취소하시겠습니까?") != 1)
+		{
+			return false;
+		}
 		document.location = "index.jsp";
+	}
+	
+	//아이디 중복 검사
+	function CheckIDDup()
+	{
+		/*
+		if(document.join.uid.value == "imsi")
+		{
+			IsDupCheck = 2;
+		} else
+		{
+			IsDupCheck = 1;
+		}
+		*/
+		var userID = document.join.uid.value;
+		if(userID == "")
+		{
+			alert("아이디를 입력해주세요.");
+			document.join.uid.focus();
+			return;
+		}
+		window.open("idcheck.jsp?id=" + userID,"_idcheck","width=400,height=400,top=200,left=600");
+		
 	}
 </script>
 <form name="join" method="post" action="joinok.jsp" onsubmit="return FormCheck();">
@@ -55,19 +111,22 @@
 	<table border="1" style="width:100%;">
 		<tr>
 			<td style="width:130px;">아이디 (*)</td>
-			<td><input type="text" required name="uid" style="width:95%"></td>
+			<td>
+				<input type="text" name="uid" size="20">
+				<input class="s_btn" type="button" value="아이디 중복체크" onclick="CheckIDDup();">
+			</td>
 		</tr>
 		<tr>
 			<td>비밀번호 (*)</td>
-			<td><input type="password" required name="upw"  style="width:95%"></td>
+			<td><input type="password" name="upw" size="20"></td>
 		</tr>
 		<tr>
 			<td>비밀번호 확인 (*)</td>
-			<td><input type="password" required name="upwcheck" style="width:95%"></td>
+			<td><input type="password" name="upwcheck" size="20"></td>
 		</tr>			
 		<tr>
 			<td>이름 (*)</td>
-			<td><input type="text" required name="uname"  style="width:95%"></td>
+			<td><input type="text" name="uname"  style="width:95%"></td>
 		</tr>		
 		<tr>
 			<td>성별 (*)</td>
@@ -96,8 +155,8 @@
 		</tr>		
 		<tr>
 			<td colspan="2" style="text-align:center;">
-				<input type="submit" value="가입완료">
-				<input type="button" value="취소" onclick="GoIndex();">
+				<input class="btn" type="submit" value="가입완료">
+				<input class="btn" type="button" value="취소" onclick="GoIndex();">
 			</td>							
 		</tr>																															
 	</table>
