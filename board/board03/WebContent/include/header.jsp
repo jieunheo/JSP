@@ -30,40 +30,33 @@ String o_uname = (String)session.getAttribute("uname");
 		<script type="text/javascript" src="./js/board.js" defer></script>
 	</head>
 	<body>
-		<table width="900px" align="center">
-			<tr>
-				<td colspan="3">
-					<table>
-						<tr>
-							<h1><a href="index.jsp">자바학습 커뮤니티</a></h1>
-							<div class="logWrap">
-							<% 
-							if (o_uno == null)
-							{
-								//로그인 안된 경우
-								%>
-								<a href="join.jsp">회원가입</a>
-								&nbsp;&nbsp;
-								<a href="login.jsp">로그인</a>
-								&nbsp;
-								<%
-							} else
-							{
-								%>
-								<%= o_uname %>님 안녕하세요 [ <a href="logout.jsp">로그아웃</a> ]
-								<%
-							}
-							%>
-							</div>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td style="width:200px" valign="top">
-					<div class="submenu"><a href="index.jsp?kind=J">자바 학습 게시판</a></div>
-					<div style="height:2px; background-color:#ffffff;"></div>
-					<div class="submenu"><a href="index.jsp?kind=H">HTML학습 게시판</a></div>
-				</td>
-				<td style="width:5px"></td>
-				<td>
+		<div class="wrap">
+			<header class="clearfix">
+				<h1><a href="index.jsp">자바학습 커뮤니티</a></h1>
+				<div class="logWrap">
+				<% 
+				if (o_uno == null)
+				{
+					//로그인 안된 경우
+					%>
+					<a href="join.jsp">회원가입</a>
+					&nbsp;&nbsp;
+					<a href="login.jsp">로그인</a>
+					&nbsp;
+					<%
+				} else
+				{
+					%>
+					<%= o_uname %>님 안녕하세요 [ <a href="logout.jsp">로그아웃</a> ]
+					<%
+				}
+				%>
+				</div>
+			</header>
+			<div class="main clearfix">
+					<div class="nav">
+						<div class="submenu"><a href="index.jsp?kind=J">자바 학습 게시판</a></div>
+						<div style="height:2px; background-color:#ffffff;"></div>
+						<div class="submenu"><a href="index.jsp?kind=H">HTML학습 게시판</a></div>
+					</div>
+					<div class="contents">

@@ -76,7 +76,7 @@ if (end_block >= max_page)
 
 %>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
-<table border="0" style="width:100%;">
+<table border="0" style="width:700px;">
 	<tr>
 		<td style="height:40px">
 			<span style="font-weight:bold; color:red;">※

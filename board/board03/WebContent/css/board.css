@@ -1,4 +1,8 @@
 @charset "EUC-KR";
+html, body, header, footer, h1, h2, h3, h4, h5, h6, div, p, a {
+	padding: 0;
+	margin: 0;
+}
 
 body
 {
@@ -8,6 +12,8 @@ body
 h1 {
 	color: red;
 	font-size: 20px;
+	display: inline-block;
+	float: left;
 }
 
 a {
@@ -20,13 +26,48 @@ a:hover {
 	color: red;
 }
 
-.logWrap {
-	text-align: right;
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
 }
 
-table
+
+/* wrap */
+.wrap {
+	width: 900px;
+	margin: 0 auto;
+}
+
+/* header */
+header {
+	height: 60px;
+}
+
+h1 {
+	line-height: 60px;
+}
+
+.logWrap {
+	display: inline-block;
+	float: right;
+	line-height: 60px;
+}
+
+/* main */
+.main
 {
 	background-color:white;
+}
+
+.nav {
+	float: left;
+}
+
+.contents {
+	float: right;
+	width: 700px;
+	padding-right: 50px;
 }
 
 .submenu
