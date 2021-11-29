@@ -1,0 +1,23 @@
+@charset "EUC-KR";
+
+body
+{
+	background-color:#f4f4f4;	
+}
+
+table
+{
+	background-color:white;
+}
+
+.submenu
+{
+	background-color: #f4f4f4;
+	height: 40px;	
+	text-align: center;			
+}
+
+.submenu:hover
+{
+	background-color: #cccccc;
+}
