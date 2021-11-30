@@ -14,7 +14,7 @@ dbms.OpenQuery(sql);
 if(dbms.GetNext() == true)
 {
 	//ID가 중복됨
-	isdup = true;	
+	isdup = true;
 }else
 {
 	isdup = false;
