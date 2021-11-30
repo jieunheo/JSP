@@ -197,4 +197,9 @@ public class DBManager
 		}
 		return bno;
 	}
+	
+	public static void main(String args[])
+	{
+	
+	}
 }
