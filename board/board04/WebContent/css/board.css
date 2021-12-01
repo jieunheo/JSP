@@ -1,12 +1,15 @@
-@charset "EUC-KR";
-
-body
-{
-	background-color: #f4f4f4;	
+@charset "UTF-8";
+/* 리셋 */
+html, body, a, h1, h2, h3, h4, h5, h6, p, div {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
-div {
-	box-sizing: border-box;
+a {
+	color: inherit;
+	text-decoration: none;
+	display: inline-block;
 }
 
 input[type=submit],
@@ -16,12 +19,24 @@ input[type=button] {
 	cursor: pointer;
 }
 
+body
+{
+	background-color: #f4f4f4;	
+}
+
+.wrap {
+	width: 900px;
+	margin: 0 auto;
+}
+
+/* btn */
 .btn {
 	background: #7091b8;
 	color: #fff;
 	padding: 5px 10px;
 	border-radius: 5px;
 	font-weight: bold;
+	font-size: 14px;
 }
 
 .btn:hover {
@@ -37,14 +52,40 @@ input[type=button] {
 	color: #fff;
 }
 
+.btn_wrap {
+	width: 100%;
+	text-align: center;
+}
+
+/* header */
+header {
+	position: relative;
+	width: 100%;
+}
+
+h1 {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: #7091b8;
+	font-size: 20px;
+}
+
+.login_wrap {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+/* main */
+h3 {
+	color: red;
+}
+
 table
 {
 	background-color: white;
-}
-
-.wrap {
-	width: 100%;
-	text-align: center;
+	border-collapse: collapse;
 }
 
 .submenu
@@ -59,6 +100,19 @@ table
 	background-color: #cccccc;
 }
 
+/* main */
+.contents {
+	width: 100%;
+}
+
+td, th {
+	padding: 5px 0;
+}
+
+.contents tbody tr:hover {
+	background: #eee;
+}
+
 /* check */
 .check {
 	background: #fff;
@@ -66,4 +120,13 @@ table
 
 .check span {
 	font-weight: bold;
+}
+
+/* view */
+.down_btn {
+	font-style: italic;
+}
+
+.down_btn:hover {
+	color:red;
 }
