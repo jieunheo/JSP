@@ -6,14 +6,18 @@
 String bno        = request.getParameter("no");   //게시물번호
 String bkind      = request.getParameter("kind"); //구분
 String cur_page   = request.getParameter("page"); //페이지번호
+String key        = request.getParameter("key");  //검색 키워드
+if (key == null)	key = "";
+//key = URLEncoder.encode(key);
+key = key.replace("[", "%5B").replace("]", "%5D");
 
 //사용할 변수
 String uno		 = ""; //회원번호
 String btitle  = ""; //제목
-String bnote 	 = "";	//내용
-String bwdate  = "";	//작성일
-String bhit 	 = "";	//조회수
-String uname 	 = "";	//작성자
+String bnote 	 = ""; //내용
+String bwdate  = ""; //작성일
+String bhit 	 = ""; //조회수
+String uname 	 = ""; //작성자
 
 //빈 값 확인
 if(bno == null || bno.equals(""))
@@ -21,7 +25,7 @@ if(bno == null || bno.equals(""))
 	%>
 	<script>
 		alert("잘못된 접근입니다.");
-		document.location = "index.jsp?kind=<%= bkind %>&page=<%= cur_page %>";
+		document.location = "index.jsp";
 	</script>
 	<%
 	return;
@@ -44,7 +48,7 @@ if (dbms.GetNext() == false)
 	%>
 	<script>
 		alert("게시물이 없습니다.");
-		document.location = "index.jsp?kind=<%= bkind %>&page=<%= cur_page %>";
+		document.location = "index.jsp";
 	</script>
 	<%
 	return;
@@ -132,7 +136,7 @@ dbms.CloseQuery();
 	</tr>																								
 </table>
 <div class="btn_wrap">
-	<a class="btn" href="index.jsp?kind=<%= bkind %>&page=<%= cur_page %>">글목록</a>
+	<a class="btn" href="index.jsp?kind=<%= bkind %>&page=<%= cur_page %>&key=<%= key %>">글목록</a>
 	<%
 	if (login != null && login.getNo().equals(uno))
 	{
