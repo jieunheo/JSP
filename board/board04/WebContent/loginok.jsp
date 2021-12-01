@@ -28,6 +28,7 @@ dbms.OpenQuery(sql);
 if (dbms.GetNext() == false)
 {
 	%>
+	dbms.CloseQuery();
 	<!--
 	아이디 또는 비밀번호가 일치하지 않습니다.<br>
 	<a href="login.jsp">로그인 화면으로 돌아가기</a>
@@ -51,6 +52,7 @@ if (dbms.GetNext() == false)
 		document.location = "index.jsp";
 	</script>
 	<%
+	dbms.CloseQuery();
 }
 %>
 <%@ include file="./config/dbclose.jsp" %>
