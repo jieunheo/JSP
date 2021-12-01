@@ -19,8 +19,8 @@
 		<tr>
 			<td style="width:120px; text-align:center; background-color:#f4f4f4">구분</td>
 			<td>
-				<input type="radio" name="subject" checked>자바 학습 게시판
-				<input type="radio" name="subject">HTML 학습 게시판
+				<input type="radio" name="subject" id="J" checked><label for="J">자바 학습 게시판</label>
+				<input type="radio" name="subject" jd="H"><label for="H">HTML 학습 게시판</label>
 			</td>
 		</tr>						
 		<tr>
