@@ -3,8 +3,9 @@
 <%@ include file="./include/header.jsp" %>
 <%
 //값 받아오기
-String bno    = request.getParameter("no");  //게시물번호
-String bkind   = request.getParameter("kind"); //구분
+String bno        = request.getParameter("no");   //게시물번호
+String bkind      = request.getParameter("kind"); //구분
+String cur_page   = request.getParameter("page"); //페이지번호
 
 //사용할 변수
 String uno		 = ""; //회원번호
@@ -20,7 +21,7 @@ if(bno == null || bno.equals(""))
 	%>
 	<script>
 		alert("잘못된 접근입니다.");
-		document.location = "index.jsp?kind=<%= bkind %>";
+		document.location = "index.jsp?kind=<%= bkind %>&page=<%= cur_page %>";
 	</script>
 	<%
 	return;
@@ -43,7 +44,7 @@ if (dbms.GetNext() == false)
 	%>
 	<script>
 		alert("게시물이 없습니다.");
-		document.location = "index.jsp?kind=<%= bkind %>";
+		document.location = "index.jsp?kind=<%= bkind %>&page=<%= cur_page %>";
 	</script>
 	<%
 	return;
@@ -131,14 +132,14 @@ dbms.CloseQuery();
 	</tr>																								
 </table>
 <div class="btn_wrap">
-	<a class="btn" href="index.jsp?kind=<%= bkind %>">글목록</a>
+	<a class="btn" href="index.jsp?kind=<%= bkind %>&page=<%= cur_page %>">글목록</a>
 	<%
 	if (login != null && login.getNo().equals(uno))
 	{
 		//로그인한 사람과 게시글 작성자가 같으면 수정,삭제 보이도록
 		%>
-		<a class="btn" href="modify.jsp?kind=<%= bkind %>&bno=<%= bno %>">글수정</a>
-		<a class="btn" href="delete.jsp?kind=<%= bkind %>&bno=<%= bno %>">글삭제</a>
+		<a class="btn" href="modify.jsp?no=<%= bno %>&kind=<%= bkind %>&page=<%= cur_page %>">글수정</a>
+		<a class="btn" href="delete.jsp?no=<%= bno %>&kind=<%= bkind %>&page=<%= cur_page %>">글삭제</a>
 		<%
 	}
 	%>
