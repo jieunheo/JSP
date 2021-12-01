@@ -12,6 +12,9 @@
 //업로드 할 폴더 경로
 String uploadPath = "C:\\hje\\WorkSpace\\Board04\\WebContent\\upload";
 
+//업로드가 가능한 최대 파일 크기를 지정한다.
+int size = 10 * 1024 * 1024;
+
 //DB 열기
 DBManager dbms = new DBManager();
 dbms.DBOpen();
