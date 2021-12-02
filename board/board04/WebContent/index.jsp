@@ -141,6 +141,7 @@ if (end_block >= max_page)
 				<%
 				//key = URLEncoder.encode(key);
 				key = key.replace("[", "%5B").replace("]", "%5D");
+				int seqno = total - start_no; //total - ((cur_page - 1) * 10);
 				while (dbms.GetNext() == true)
 				{
 					String bno    = dbms.GetValue("bno");
@@ -150,7 +151,7 @@ if (end_block >= max_page)
 					String uname  = dbms.GetValue("uname");
 					%>
 					<tr>
-						<td style="text-align:center;"><%= bno %></td>
+						<td style="text-align:center;"><%= seqno-- %></td>
 						<td><a href="view.jsp?no=<%= bno %>&kind=<%= kind %>&page=<%= cur_page %>&key=<%= key %>"><%= btitle %></a></td>
 						<td style="text-align:center;"><%= bwdate %></td>
 						<td style="text-align:center;"><%= uname %></td>
