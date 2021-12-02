@@ -1,7 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <%@ include file="./include/header.jsp" %>
+<%
+//값 받아오기
+
+//권한 검사
+
+//select로 해당 db 가져오기
+
+//아래에 가서 폼에 각 값 뿌려주기
+
+//링크에 값 달아주기
+%>
 <!-- 컨텐츠 출력 되는곳 -------------------------- -->
 <table border="0" style="width:100%;">
 	<tr>
