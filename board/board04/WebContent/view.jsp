@@ -142,8 +142,8 @@ dbms.CloseQuery();
 	{
 		//로그인한 사람과 게시글 작성자가 같으면 수정,삭제 보이도록
 		%>
-		<a class="btn" href="modify.jsp?no=<%= bno %>&kind=<%= bkind %>&page=<%= cur_page %>">글수정</a>
-		<a class="btn" href="delete.jsp?no=<%= bno %>&kind=<%= bkind %>&page=<%= cur_page %>">글삭제</a>
+		<a class="btn" href="modify.jsp?no=<%= bno %>&kind=<%= bkind %>&page=<%= cur_page %>&key=<%= key %>">글수정</a>
+		<a class="btn" href="delete.jsp?no=<%= bno %>&kind=<%= bkind %>&page=<%= cur_page %>&key=<%= key %>">글삭제</a>
 		<%
 	}
 	%>
