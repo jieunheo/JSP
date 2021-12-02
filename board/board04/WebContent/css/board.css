@@ -130,3 +130,12 @@ td, th {
 .down_btn:hover {
 	color:red;
 }
+
+/* ok */
+.ok {
+	text-align: center;
+}
+
+.ok p {
+	margin-bottom: 10px;
+}
