@@ -133,7 +133,7 @@ dbms.CloseQuery();
 		}
 		%>
 		</td>
-	</tr>																								
+	</tr>
 </table>
 <div class="btn_wrap">
 	<a class="btn" href="index.jsp?kind=<%= bkind %>&page=<%= cur_page %>&key=<%= key %>">글목록</a>
